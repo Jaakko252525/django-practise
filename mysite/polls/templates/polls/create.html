@@ -1,0 +1,49 @@
+
+
+
+{% block title%} Create new {% endblock %}
+
+{% block content %}
+<html>
+    <head>
+        <h1>create page </h1>
+    </head>
+    
+    <body> 
+        <form method="post" action="/create/" >
+            {% csrf_token %}
+            {{form.as_p}}
+            <button type="submit" name="save" >Create</button>
+
+        </form>
+    </body>
+
+</html>
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
