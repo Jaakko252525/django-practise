@@ -13,8 +13,8 @@ from django.utils import timezone
 class Question(models.Model):
     question_text = models.CharField(max_length=200)
     pub_date = models.DateTimeField("date published")
-    siuu = models.CharField(max_length=200)
-    testi = models.CharField(max_length=200)
+    siuu = models.CharField(max_length=200, default='siu')
+    testi = models.CharField(max_length=200, default='')
 
     MOI = "moi_1"
     HEY = "hey_1"
@@ -27,8 +27,6 @@ class Question(models.Model):
         choices=choices,
         default="moi",
     )
-
-
 
 
     def was_published_recently(self):
