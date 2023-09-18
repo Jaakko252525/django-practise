@@ -2,13 +2,15 @@
 
 
 
-.Hello {
+li a {
     color: green;
 }
 
 
 
-
+body {
+    background: white url("images/zlatan.jpg") no-repeat;
+}
 
 
 

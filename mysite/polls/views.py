@@ -50,6 +50,14 @@ def vote(request, question_id):
         return HttpResponseRedirect(reverse("polls:results", args=(question.id,)))
     
 
+# harjoittelu viewi
 
+def harkka(req):
 
+    template_name = "polls/harkka.html"
+    var = 'siuu'
+    
+
+    return render(req,template_name
+    )
 
