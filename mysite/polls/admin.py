@@ -19,9 +19,9 @@ class QuestionAdmin(admin.ModelAdmin):
         ("greating", {"fields": ["greating"]})
 
     ]
-    list_display = ["testi", "siuu", "pub_date"]
+    list_display = ["question_text","testi", "siuu", "pub_date"]
     inlines = [ChoiceInline]
-
+    list_filter = ["question_text","testi", "siuu", "pub_date"]
 
 admin.site.register(Question, QuestionAdmin)
 

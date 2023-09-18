@@ -9,6 +9,9 @@ import datetime
 from django.db import models
 from django.utils import timezone
 
+# admin import
+from django.contrib import admin
+
 
 class Question(models.Model):
     question_text = models.CharField(max_length=200)
@@ -26,6 +29,13 @@ class Question(models.Model):
         max_length=5,
         choices=choices,
         default="moi",
+    )
+
+    # makes a button to sort list
+    @admin.display(
+        boolean=True,
+        ordering="pub_date",
+        description="Published recently?",
     )
 
 
