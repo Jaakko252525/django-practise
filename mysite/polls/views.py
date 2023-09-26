@@ -5,6 +5,12 @@ from django.views import generic
 
 from .models import Choice, Question
 
+# importing scraping class
+from .scraper_module import Scrappy
+
+# importing form
+from .form_module import CreateNewList
+
 
 class IndexView(generic.ListView):
     template_name = "polls/index.html"
@@ -55,9 +61,22 @@ def vote(request, question_id):
 def harkka(req):
 
     template_name = "polls/harkka.html"
-    var = 'siuu'
+    
+    # making object
+    scraping = Scrappy(site="http://www.python.org")
+
+
+    
+    context = {
+        'var': 'siuu',
+        'object': {
+            'name': 'jaakko',
+            'job': 'fullstack'
+        },
+        'form': CreateNewList()
+    }
+
     
 
-    return render(req,template_name
-    )
+    return render(request=req, template_name=template_name, context=context)
 

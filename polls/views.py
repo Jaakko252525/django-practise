@@ -55,11 +55,15 @@ def vote(request, question_id):
 def harkka(req):
 
     template_name = "polls/harkka.html"
-    var = 'siuu'
+
     
 
-    return render(req,template_name
-    )
+    context = {
+        'var': 'siuu'
+    }
+
+    
+    return render(request=req,template_name=template_name, context=context)
 
 
 
