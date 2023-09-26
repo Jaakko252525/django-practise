@@ -16,8 +16,10 @@
 <h1>Form</h1>
 
 
-<form>
+<form method="post">
+    {% csrf_token %}
     {{form}}
+    <button type="submit", name="save"> make scrape</button>
 
 </form>
 
